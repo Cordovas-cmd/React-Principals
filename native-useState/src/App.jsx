@@ -9,7 +9,12 @@ function NameList() {
 
   // add multiple pieces of state assisiciated with the same component.
   const [list, setList] = useState(["Jack", "Jill", "John"]);
-  const [name, setName] = useState("");
+
+  // use state can also take a function as a starting value
+  const [name, setName] = useState(() => "jack");
+
+  
+  // const [name, setName] = useState("");
 
 
   const onAddName = () => {
@@ -20,6 +25,8 @@ function NameList() {
 
     // the code below will work, it creates a new array with the old array value + our new name thus re rednering
     setList([...list, name]);
+
+    // runs right after setList and re renders an empty string.
     setName("")
   };
   return (
